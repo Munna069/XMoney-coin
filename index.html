@@ -254,11 +254,12 @@
 
         <!-- Display User Info -->
 
-        <div class="user_info">
-
-            <p>Welcome, <span id="user-name"></span></p>
-
-        </div>
+        <div class="content">
+            <div class="user-info">
+                <div class="user-badge">VIP USER</div>
+                <p>Welcome, <span id="user-name">User123</span></p>
+                <p>User ID: <span id="user-id">#USR-7694</span></p>
+            </div>
 
 
         <div class="stats">
@@ -336,9 +337,9 @@
 
         // Simulate user name from Telegram User ID (replace with actual logic to get user info)
 
-        const telegramUserName = "@teleuser"; // Replace this line with the actual logic to fetch username
-
-        document.getElementById("user-name").textContent = telegramUserName;
+        userId = localStorage.getItem('userId');
+            document.getElementById('user-id').textContent = `#${userId}`;
+            document.getElementById('user-name').textContent = `User${Math.floor(1000 + Math.random() * 9000)}`;
 
 
         // Check if user data is saved in localStorage
@@ -370,7 +371,7 @@
 
                     document.getElementById('watched-ads').textContent = watchedAdsCount;
 
-                    earnedPoints += 1000.01; // Add 0.01 points per ad watched
+                    earnedPoints += 0.01; // Add 0.01 points per ad watched
 
                     document.getElementById('earned-points').textContent = earnedPoints.toFixed(2);
 
